@@ -17,7 +17,7 @@ library(svglite)    # For saving plots as SVGs
 library(gridExtra)  # For arranging multiple plots
 
 # Load Bangladesh shapefile and assign it to bangladesh_shapefile
-bangladesh_shapefile <- st_read(file.choose())  # Prompts user to choose a shapefile
+bangladesh_shapefile <- st_read(file.choose())  
 
 # Create a data frame for total damage data by district
 damage_data <- data.frame(
@@ -34,7 +34,7 @@ agri_damage <- read.csv(file.choose())
 # Print data for checking
 print(damage_data)
 print(bangladesh_shapefile)
-names(bangladesh_shapefile)  # Check column names in the shapefile
+names(bangladesh_shapefile)  
 
 # Merge the shapefile data with economic damage data on district name
 merged_data <- bangladesh_shapefile %>%
@@ -42,7 +42,7 @@ merged_data <- bangladesh_shapefile %>%
 
 # Check column names of the merged dataset
 names(merged_data)
-names(merged_data2)  # Check if there is a merged_data2 (it may need creating first)
+names(merged_data2)  
 
 # Ensure Damage_Category is created based on Total_Damage column in merged_data
 merged_data <- merged_data %>%
